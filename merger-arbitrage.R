@@ -84,6 +84,7 @@ for (i in 2:nrow(long)){
 
 returns = as.data.frame(unlist(returns))
 cum_returns = cumsum(returns$`unlist(returns)`)
+par(mfrow=c(1,1))
 plot(cum_returns, type = "l", ylab = "Cash Strategy Returns", col = "blue")
 
 #We conclude by summarizing the results of the strategy
