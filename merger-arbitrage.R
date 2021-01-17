@@ -44,11 +44,11 @@ names(results) = c("Returns Long", "Returns Short", "Total Return")
 premium = 0.31 #announced by the acquirer
 price_cap = target_price[5]*(1+premium) #we stop when this price is reached
 
-upside = price_cap 
-upside_pctg = upside/target_price[6] - 1
+upside = price_cap - target_price[6]
+upside_pctg = upside/target_price[6]
 
-downside = target_price[5]
-downside_pctg = downside/target_price[6] - 1
+downside = target_price[6] - target_price[5]
+downside_pctg = downside/target_price[5]
 
 prob_success = downside/(upside+downside) #probability of deal success
 deal_break = 1 - prob_success #probability of deal break
